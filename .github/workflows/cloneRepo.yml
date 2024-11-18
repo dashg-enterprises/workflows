@@ -1,0 +1,25 @@
+name: Clone Repo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Clone dashg-enterprises/cloud-infrastructure PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          owner: "dashg-enterprises"
+          repository: "cloud-infrastructure"
+          access-token: ${{ secrets.DASHG_CLOUD_PLATFORM_PAT }}
