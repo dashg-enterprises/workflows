@@ -13,10 +13,6 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "npm"
       - name: Clone dashg-enterprises/cloud-infrastructure PRIVATE repository
         uses: GuillaumeFalourd/clone-github-repo-action@v2.3
         with:
