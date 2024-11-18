@@ -18,4 +18,4 @@ jobs:
         with:
           owner: "dashg-enterprises"
           repository: "cloud-infrastructure"
-          access-token: ${{ secrets.DASHG_CLOUD_PLATFORM_PAT }}
+          access-token: ${{ secrets.DASHG_CLOUD_INFRA_PAT }}
