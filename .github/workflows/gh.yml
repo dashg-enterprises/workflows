@@ -10,6 +10,6 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: gh repo create cloud-deployment-poc-test
+      - run: gh repo create cloud-deployment-poc-test --private
         env:
           GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
