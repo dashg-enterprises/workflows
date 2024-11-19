@@ -20,9 +20,7 @@ jobs:
           git --version
           git config user.name "DashGs Actions Bot"
           git config user.email "<>"
-          git status
-          git tag
-          git describe
+          git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git https://github.com/dashg-labs/cloud-deployment.git
 
     # name: "Mirror cloud-deployment"
     # steps:
