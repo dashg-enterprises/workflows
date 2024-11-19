@@ -29,7 +29,7 @@ jobs:
           git commit -m 'Start with template content'
           git status
           # ls
-          # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git cloud-deployment
+          # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git https://github.com/dashg-enterprises/cloud-deployment.git
 
     # name: "Mirror cloud-deployment"
     # steps:
