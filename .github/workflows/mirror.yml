@@ -23,7 +23,7 @@ jobs:
           git config --global init.defaultBranch main
           git init cloud-deployment2
           cd cloud-deployment2
-          # git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
           git archive template/main | tar -xf-
           # git status
           # git add .
