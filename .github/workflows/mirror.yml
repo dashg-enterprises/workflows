@@ -22,12 +22,12 @@ jobs:
           git config --global user.email "brandy.e.garland@gmail.com"
           git init cloud-deployment2
           cd cloud-deployment2
-          git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          # git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
           git archive template/main | tar -xf-
-          git status
-          git add .
-          git commit -m 'Start with template content'
-          git status
+          # git status
+          # git add .
+          # git commit -m 'Start with template content'
+          # git status
           # ls
           # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git https://github.com/dashg-enterprises/cloud-deployment.git
 
