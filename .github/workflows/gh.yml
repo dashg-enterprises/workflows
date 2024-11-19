@@ -7,9 +7,9 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: gh repo create ${{ vars.CLIENT_ORG }}/cloud-deployment --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
-        env:
-          GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
-      - run: gh repo create ${{ vars.CLIENT_ORG }}/cloud-infrastructure --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-instructure.git
+      - run: |
+          git config --global user.name "DashGs Actions Bot"
+          gh repo create ${{ vars.CLIENT_ORG }}/cloud-deployment-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          gh repo create ${{ vars.CLIENT_ORG }}/cloud-infrastructure-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-instructure.git
         env:
           GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
