@@ -10,20 +10,20 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
-    - name: git
-      run: |
-        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-        git --version
-        git config user.name "DashGs Actions Bot"
-        git config user.email "<>"
-        git status
-        git tag
-        git describe
-    
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: git
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git --version
+          git config user.name "DashGs Actions Bot"
+          git config user.email "<>"
+          git status
+          git tag
+          git describe
+
     # name: "Mirror cloud-deployment"
     # steps:
     #   - uses: pkgstore/github-action-mirror@main
@@ -40,4 +40,5 @@ jobs:
     #       owner: "dashg-enterprises"
     #       repository: "cloud-infrastructure"
     #       access-token: ${{ secrets.DASHG_CLOUD_INFRA_PAT }}
-"
+
+# "
