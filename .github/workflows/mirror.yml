@@ -26,10 +26,15 @@ jobs:
           git remote add --fetch cloud-deployment-poc https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
           git archive cloud-deployment-poc/main | tar -xf-
           git status
+          rm -rf .git
+          git status
+
           git add .
           git commit -m 'Start with template content'
           git status
+
           git push --set-upstream cloud-deployment-poc main
+
           # ls
           # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git https://github.com/dashg-enterprises/cloud-deployment.git
 
