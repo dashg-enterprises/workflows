@@ -18,8 +18,8 @@ jobs:
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git --version
-          git config user.name "DashGs Actions Bot"
-          git config user.email "brandy.e.garland@gmail.com"
+          git config -global user.name "DashGs Actions Bot"
+          git config -global user.email "brandy.e.garland@gmail.com"
           git init cloud-deployment
           cd cloud-deployment
           git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
