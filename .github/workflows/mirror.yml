@@ -26,6 +26,7 @@ jobs:
           git archive template/main | tar -xf-
           git add .
           git commit -m 'Start with template content'
+          git push origin main
           # ls
           # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git cloud-deployment
 
