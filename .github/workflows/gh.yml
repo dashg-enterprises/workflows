@@ -10,7 +10,6 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-    - run: gh repo create cloud-deployment-poc --private --source=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git --remote=upstream
-
+      - run: gh repo create cloud-deployment-poc --private --source=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git --remote=upstream
         env:
           GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
