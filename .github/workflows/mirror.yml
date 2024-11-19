@@ -1,4 +1,4 @@
-name: Clone Repo
+name: mirror Repo
 
 on:
   push:
@@ -20,8 +20,14 @@ jobs:
           git --version
           git config user.name "DashGs Actions Bot"
           git config user.email "<>"
-          ls
-          git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git cloud-deployment
+          git init cloud-deployment
+          cd cloud-deployment
+          git remote add --fetch template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          git archive template/main | tar -xf-
+          git add .
+          git commit -m 'Start with template content'
+          # ls
+          # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git cloud-deployment
 
     # name: "Mirror cloud-deployment"
     # steps:
