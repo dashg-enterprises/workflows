@@ -29,8 +29,11 @@ jobs:
           git add .
           git commit -m 'Start with template content'
           git status
+          git remote -v
 
-          git push --set-upstream dashg-labs/cloud-deployment-poc main
+          # git remote set-url --push origin https://your_username:$GITHUB_TOKEN@github.com/your/repo
+
+          # git push --set-upstream dashg-labs/cloud-deployment-poc main
 
           # ls
           # git clone --template https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git https://github.com/dashg-enterprises/cloud-deployment.git
