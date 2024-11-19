@@ -31,7 +31,7 @@ jobs:
           git status
           git remote -v
 
-          git remote set-url --push origin https://${{ secrets.CLIENT_REPO_PAT }}@github.com/dashg-labs/cloud-deployment-poc.git
+          # git remote set-url --push origin https://${{ secrets.CLIENT_REPO_PAT }}@github.com/dashg-labs/cloud-deployment-poc.git
 
           git remote -v
 
