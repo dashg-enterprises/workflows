@@ -1,8 +1,8 @@
 name: GH clone
 
 on:
-  push:
-    branches: main
+  # push:
+  #   branches: main
   workflow_dispatch:
 
 jobs:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          # gh repo create ${{ vars.CLIENT_ORG }}/cloud-deployment-test2 --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
-          # gh repo create ${{ vars.CLIENT_ORG }}/cloud-infrastructure-test2 --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
-          gh auth token
+          gh repo create ${{ vars.CLIENT_ORG }}/cloud-deployment --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          gh repo create ${{ vars.CLIENT_ORG }}/cloud-infrastructure --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+
         env:
           GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
