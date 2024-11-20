@@ -10,8 +10,6 @@ inputs:
 runs:
   runs-on: ubuntu-latest
   permissions:
-    contents: write
-    pull-requests: write
     repository-projects: write
   name: "Clone cloud-deployment and cloud-infrastructure repos."
   steps:
