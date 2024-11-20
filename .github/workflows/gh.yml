@@ -8,6 +8,7 @@ on:
 jobs:
   comment:
     runs-on: ubuntu-latest
+    name: "Clone cloud-deployment and cloud-infrastructure repos."
     steps:
       - run: |
           gh repo create ${{ github.repository_owner }}/cloud-deployment --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
