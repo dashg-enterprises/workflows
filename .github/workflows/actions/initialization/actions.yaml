@@ -1,20 +1,23 @@
 name: Initialize DashG cloudscape
 description: Initialize cloudscape
 
-
 inputs:
   CLOUD_DEPLOYMENT_PAT:
-    description: 'PAT to checkout cloud-deployment'
+    description: "PAT to checkout cloud-deployment"
   DASHG_CLOUD_PLATFORM_PAT:
-    description: 'PAT to access dashg-enterprises/cloud-platform'
+    description: "PAT to access dashg-enterprises/cloud-platform"
 
 runs:
   runs-on: ubuntu-latest
-    name: "Clone cloud-deployment and cloud-infrastructure repos."
-    steps:
-      - run: |
-          gh repo create ${{ github.repository_owner }}/cloud-deployment --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
-          gh repo create ${{ github.repository_owner }}/cloud-infrastructure --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+  permissions:
+    contents: write
+    pull-requests: write
+    repository-projects: write
+  name: "Clone cloud-deployment and cloud-infrastructure repos."
+  steps:
+    - run: |
+        gh repo create ${{ github.repository_owner }}/cloud-deployment --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+        gh repo create ${{ github.repository_owner }}/cloud-infrastructure --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
 
-        env:
-          GH_TOKEN: ${{ inputs.CLIENT_REPO_PAT }}
+      env:
+        GH_TOKEN: ${{ inputs.CLIENT_REPO_PAT }}

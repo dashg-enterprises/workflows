@@ -16,4 +16,4 @@ jobs:
         id: initialization
         with:
           CLOUD_DEPLOYMENT_PAT: ${{ secrets.CLOUD_DEPLOYMENT_PAT }}
-          DASHG_CLOUD_PLATFORM_PAT: ${{ secrets.DASHG_CLOUD_PLATFORM_PAT }}
+          DASHG_CLOUD_INFRA_PAT: ${{ secrets.DASHG_CLOUD_INFRA_PAT }}
