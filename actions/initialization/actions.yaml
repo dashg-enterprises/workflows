@@ -1,0 +1,13 @@
+name: Initialize DashG cloudscape
+description: Initialize cloudscape
+
+runs:
+  runs-on: ubuntu-latest
+    name: "Clone cloud-deployment and cloud-infrastructure repos."
+    steps:
+      - run: |
+          gh repo create ${{ github.repository_owner }}/cloud-deployment --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          gh repo create ${{ github.repository_owner }}/cloud-infrastructure --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+
+        env:
+          GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
