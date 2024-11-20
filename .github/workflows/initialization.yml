@@ -1,4 +1,4 @@
-name: GH clone
+name: Clone necessary cloud templates
 
 on:
   # push:
