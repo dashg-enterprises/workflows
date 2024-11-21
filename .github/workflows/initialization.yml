@@ -15,5 +15,5 @@ jobs:
         name: Initialize
         id: initialization
         with:
-          CLOUD_DEPLOYMENT_PAT: ${{ secrets.CLOUD_DEPLOYMENT_PAT }}
+          CLIENT_REPO_PAT: ${{ secrets.CLIENT_REPO_PAT }}
           DASHG_CLOUD_INFRA_PAT: ${{ secrets.DASHG_CLOUD_INFRA_PAT }}

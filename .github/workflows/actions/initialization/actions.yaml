@@ -2,10 +2,10 @@ name: Initialize DashG cloudscape
 description: Initialize cloudscape
 
 inputs:
-  CLOUD_DEPLOYMENT_PAT:
-    description: "PAT to checkout cloud-deployment"
-  DASHG_CLOUD_PLATFORM_PAT:
-    description: "PAT to access dashg-enterprises/cloud-platform"
+  CLIENT_REPO_PAT:
+    description: "PAT to clone to client repos"
+  DASHG_CLOUD_INFRA_PAT:
+    description: "PAT to access dashg-enterprises cloud infra repos"
 
 runs:
   runs-on: ubuntu-latest
