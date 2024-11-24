@@ -19,7 +19,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           echo ${{ github.event.client_payload.repository_owner }}
-          gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-deployment-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
-          gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-infrastructure-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+          # gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-deployment-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
+          # gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-infrastructure-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+          gh repo create ${{ github.event.client_payload.repository_owner }}/workflows-test --private --template=https://github.com/dashg-enterprises/workflows.git
         env:
           GH_TOKEN: ${{ github.event.client_payload.github_token }}
