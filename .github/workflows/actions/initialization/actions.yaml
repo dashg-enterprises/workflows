@@ -13,6 +13,7 @@ runs:
     repository-projects: write
   name: "Clone cloud-deployment and cloud-infrastructure repos."
   steps:
+    - uses: actions/checkout@v4
     - run: |
         gh repo create ${{ github.repository_owner }}/cloud-deployment --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
         gh repo create ${{ github.repository_owner }}/cloud-infrastructure --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
