@@ -22,4 +22,4 @@ jobs:
           gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-deployment-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
           gh repo create ${{ github.event.client_payload.repository_owner }}/cloud-infrastructure-test --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
         env:
-          GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
+          GH_TOKEN: ${{ github.event.client_payload.github_token }}
