@@ -6,7 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       repository_owner:
-        description: "The org to deploy the cloudscape to"
+        description: "The org to deploy the cloudscape to:"
+        required: true
+        type: text
+  repository_dispatch:
+    inputs:
+      repository_owner:
+        description: "The org to deploy the cloudscape to:"
         required: true
         type: text
 
