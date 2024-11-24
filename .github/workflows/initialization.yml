@@ -4,6 +4,11 @@ on:
   # push:
   #   branches: main
   workflow_dispatch:
+    inputs:
+      repository_owner:
+        description: "The org to deploy the cloudscape to"
+        required: true
+        type: text
 
 jobs:
   comment:
@@ -12,8 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-        gh repo create ${{ github.repository_owner }}/cloud-deployment-test --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-deployment.git
-        gh repo create ${{ github.repository_owner }}/cloud-infrastructure-test --private --template=https://${{ inputs.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
-
-      env:
-        GH_TOKEN: ${{ inputs.CLIENT_REPO_PAT }}
+          gh repo create ${{ inputs.repository_owner }}/cloud-deployment --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@inputs.com/dashg-enterprises/cloud-deployment.git
+          gh repo create ${{ inputs.repository_owner }}/cloud-infrastructure --private --template=https://${{ secrets.DASHG_CLOUD_INFRA_PAT }}@github.com/dashg-enterprises/cloud-infrastructure.git
+        env:
+          GH_TOKEN: ${{ secrets.CLIENT_REPO_PAT }}
